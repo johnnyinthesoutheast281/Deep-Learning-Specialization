@@ -8,6 +8,11 @@ In order to choose, we will need to choose a metric that can generalize the prob
 In the cat classification problem, we can use F1 Score to evaluate the performance of the classifiers. So, the first classifier will have 92.4 percent in F1 score and 89.7 percent in F1 Score for the second classifier. Now we can determine which classifier we should choose.  
 
 # Satisficing and Optimizing Metric
+Sometimes, a high-performed model does not mean to be the one that we would use for real world problems. Consider a classification problem: you want to use Machine Learning to detect human faces in real time i.e time attendance system. You have trained three different models: first model with 90 percent accuracy and can detect human faces every 80 milli-seconds, the second model with 94 percent accuracy and can detect human faces every 95 milli-seconds and the third model that has impressively high accuracy at 97 percent but needs 500 milli-seconds to detect.
 
+In the real world senario, the best practice is actually not the one with highest performance, but the one that both satisfy performance demand and time demand. With the third model, our system is really slow (2 FPS), so sometimes, we need to satisfice the performance to achieve the real-world problem demand. In this case, we sacrifice 3 percent accuracy to achieve higher FPS for our system (we choose the second model with 94 percent accuracy)
+
+Satisficing real-world demand is always in a higher priority. A system that can handle both time demand and and still have high performance is the system that we want to achieve.
 
 # Train / Dev / Test Sets Distribution
+Every Machine Learning System needs data. That is an undoubted fact. Another thing is that we want our model to generalize in every aspects, tackle every edge cases that can happen. Consider speech recognition problem: we want our model to detect English speech and translate it to another language i.e Vietnamese. Suppose that we have enough dataset that contains audios of every English accent. In order for our model to be good on training, developing and test set, we need to shuffle the dataset so that the distribution of training, dev and test set is the same i.e if training set contains audios of American accent, British accent, so does dev set and test set. A good model is the model that can generalize the real world problem.
